@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Rubik&display=swap" rel="stylesheet">
+    <title>Odd Triangular Area Algorithm</title>
+</head>
+<body>
+    <h1>An Odd Algorithm for<br>Finding the Total Inside Space<br>of a Triangle<br>(O.A.F.T.I.S.T)</h1>
+    <canvas id="myCanvas" width="350" height="350"></canvas>
+    <h3 id="triangleArea">Area: N/A</h3>
+    <button id="triangleButton">Generate Random Triangle</button>
+    <input id="gridSlider" max="20" min="1" type="range" value="10">
+    <h4 id="gridSize"></h4>
+    <div id="infoDiv">
+        <h2>So, what is the purpose of this little JavaScript project?</h2>
+        <p>The idea for <b>O.A.F.T.I.S.T</b> first began with being bored in the back of a high school calculus class. As my mind began to wander past what was being explained on the SMART Board, I began to draw. For whatever reason, instead of drafting doodles and dinky drawings, I started plotting points. More specifically, I first plotted three points randomly along a circle's circumference and attempted to find the probability you'd land within the three points, aka within the area of the resulting triangle. This idea eventually expanded into picking three random points on a Cartesian plane, drawing a triangle using those points, and then calculating the area of the triangle using only the points' coordinates.</p>
+        <h2>How does O.A.F.T.I.S.T work?</h2>
+        <ol id="algoSteps">
+            <li>Use the distance formula to calculate each side length of the triangle.</li>
+            <li>Create a height line between an arbitrary vertex and its opposing edge.</li>
+            <li>Using Pythagorean's Theorem and some algebraic arrangement, we arrive at a formula for the length between another point and the height line.</li>
+            <li>Then, using that length and a certain side length, calculate the height, and then use the old "area of a triangle" formula.</li>
+        </ol>
+        <img src="algorithm.jpeg" alt="algorithm" id="algoPic">
+        <p id="algoCaption">The algorithm makes a little more sense when paired with this image.</p>
+        <h2>Why is this even a thing?</h2>
+        <p>I honestly can't express why this discovery is significant, other than that it is represents one of the first times I have come up with some systematic solution to a weird problem by abstracting it and creating the necessary basic steps. This isn't even the first edition, either, as I first implemented <b>O.A.F.T.I.S.T</b> as spaghetti code in Python. I then built a quick copy in Racket (or at least one of its learning subsets) before finally building it in JavaScript so that it could live on the web.</p>
+        <h2>Will there be any updates to this ... thing?</h2>
+        <p>As far as the inner workings go, there likely won't be any updates. As contrived as the algorithm and title are, I'd like to think that this problem could be left to others to find a more efficient solution. As far as cosmetics go, I might very well be updating the look and visuals of this site whenever I see fit.</p>
+    </div>
+</body>
+<footer>
+    <script src="triangle.js"></script>
+    <p id="footerInfo">Designed and Created by Robert Yin</p>
+</footer>
+</html>
